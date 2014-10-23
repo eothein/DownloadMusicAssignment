@@ -53,31 +53,12 @@ public class MusicActivity extends Activity implements MusicInterface, MediaPlay
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_music);
-        button = (Button)findViewById(R.id.button);
-        editText = (EditText)findViewById(R.id.urlText);
-        button.setOnClickListener(new Button.OnClickListener(){
-                                      @Override
-                          public void onClick(View v) {
-                              beforeDownload();
-                          }
-                      }
-        );
-    }
+			//TODO: add code for the button
+	}
 
     @Override
     public void beforeDownload() {
-        DownloadMusic task = new DownloadMusic(this);
-        String url = editText.getText().toString();
-        task.execute(url);
-        dialog = new ProgressDialog(this);
-        setTitle("Downloading Music ...");
-        dialog.setMessage("Download in progress ...");
-        dialog.setProgressStyle(dialog.STYLE_HORIZONTAL);
-        dialog.setProgress(0);
-        dialog.setMax(100);
-        dialog.show();
+        //TODO: perform necessary steps for download the music
 
     }
 

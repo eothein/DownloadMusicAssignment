@@ -47,31 +47,10 @@ public class DownloadMusic extends AsyncTask<String, String, String> {
 
     @Override
     protected String doInBackground(String... params) {
-        int count;
-        URL url = null ;
-        HttpURLConnection connection = null;
-        OutputStream output = null;
-        InputStream input = null;
+        
         try{
-            url = new URL(params[0]);
-            connection = (HttpURLConnection)url.openConnection();
-            int lenghtOfFile = connection.getContentLength();
-            input = new BufferedInputStream(url.openStream(),10*1024);
-            String path = Environment.getExternalStorageDirectory().getPath()+"/test.mp3";
-            output = new FileOutputStream(Environment.getExternalStorageDirectory().getPath()+"/test.mp3");
-            byte[] data = new byte[1024];
-            long total = 0;
-            while((count = input.read(data))!=-1) {
-                total+= count;
-                String progress = "" + (int) ((total * 100) / lenghtOfFile);
-                Log.i(TAG,total+ "     " +progress);
-                publishProgress(progress);
-                output.write(data,0,count);
-            }
-            output.flush();
-            output.close();
-            input.close();
-            connection.disconnect();
+			// TODO: add code to download music file
+			// add it to local repo
 
         } catch (Exception e) {
             Log.e(TAG, e.getMessage());
